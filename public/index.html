@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+  This is the html file for the ecommerce website. It uses DOM manipulation
+  to go from screen to screen allowing the user to login, signup, view products,
+  and view history
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <title>EShop</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <section id="nav" class="hidden">
+      <section id="logo">
+        <a><img src="img/logo.png" alt="logo"></a>
+      </section>
+      <section id="nav-elements">
+        <input id="search" placeholder="Search...">
+        <div>
+          <a><img id="user" src="img/user.png" alt="user image"></a>
+        </div>
+        <section>
+          <span id="nav-user"> Please Login </span>
+          <section>
+            <span id="logout"> Logout </span>
+            <span id="history"> Purchase History </span>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section id="main-view" class="hidden">
+      <h1>What do you want to buy?</h1>
+      <section id="view-select">
+        <button class="views" id="grid">Grid</button>
+        <button class="views" id="list">List</button>
+      </section>
+      <select name="filter" id="filter">
+        <option selected="selected" disabled="disabled" value="">
+          -- Filter By --
+        </option>
+        <option value="all">All</option>
+        <option value="ascending">Price Ascending</option>
+        <option value="descending">Price Descending</option>
+      </select>
+      <section id="products">
+        <p id="no-products" class="hidden">
+          There are no matching products with your search
+        </p>
+      </section>
+    </section>
+
+    <section id="product-view" class="hidden">
+      <section id="product-description">
+        <section>
+          <section id="img-slider">
+            <img
+              id="product-img"
+              src="img/product_missing.png"
+              alt="product missing"
+            >
+          </section>
+        </section>
+
+        <section id="details">
+          <h2 id="product-name"></h2>
+          <p id="subtitle"></p>
+          <span class="stars"></span>
+          <span id="rating"></span>
+          <span id="rating-ct"></span>
+          <span> reviews </span>
+          <p id="price"></p>
+          <h3>Description</h3>
+          <div id="desc"></div>
+          <button id="checkout">Buy Now!</button>
+        </section>
+      </section>
+
+      <section id="ratings">
+        <h3>Leave a Review:</h3>
+        <div id="leave-review">
+          <button class="number">0</button>
+          <button class="number">1</button>
+          <button class="number">2</button>
+          <button class="number">3</button>
+          <button class="number">4</button>
+          <button class="number">5</button>
+        </div>
+        <p>Your review has been received.</p>
+        <textarea
+          id="comment"
+          placeholder="Login to leave a comment."
+          disabled="disabled"
+        ></textarea>
+        <h3>Reviews:</h3>
+        <div id="comments">
+          <section></section>
+          <p id="no-comment">There are no written reviews for this item.</p>
+        </div>
+      </section>
+    </section>
+
+    <section id="checkout-box" class="hidden">
+      <h2>Buy Item?</h2>
+      <section>
+        <button id="purchase">Yes</button>
+        <button id="back">No</button>
+      </section>
+    </section>
+
+    <section id="login-view" class="hidden">
+      <section>
+        <h2>Login to your Account</h2>
+        <p class="error-msg" id="login-error">Invalid Username or Password</p>
+        <div class="form">
+          Username:
+          <input type="text" id="username">
+          Password:
+          <input type="password" id="password">
+          <div class="button-wrapper">
+            <button id="sign-in-btn">Sign in</button>
+          </div>
+        </div>
+        <p>Don't have an account? <a id="sign-up">Sign up</a></p>
+      </section>
+    </section>
+
+    <section id="signup-view" class="hidden">
+      <section>
+        <h2>Create an Account</h2>
+        <p class="error-msg" id="signup-error">
+          Invalid Username, Email, or Password
+        </p>
+        <form class="form">
+          Username:
+          <input type="text" id="new-username">
+          Email:
+          <input type="text" id="new-email">
+          Password:
+          <input type="password" id="new-password">
+          <div class="button-wrapper">
+            <button id="sign-up-btn">Sign up</button>
+          </div>
+        </form>
+        <p>Already have an account? <a id="back-sign">Sign in</a></p>
+      </section>
+    </section>
+
+    <section id="history-view" class="hidden"></section>
+  </body>
+</html>
